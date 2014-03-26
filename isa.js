@@ -4,10 +4,10 @@ var is = require('is-type')
 module.exports = function isa(obj, typeClass){
   var typeDef = typeClass.__definition__
   assert(is.object(typeDef))
-  for (var key in typeClass){
+  for (var key in typeDef){
     var fn = obj[key]
     if (typeof fn !== 'function' ||
-        fn.length !== typeClass[key].length){
+        fn.length !== typeDef[key].length){
       return false
     }
   }
