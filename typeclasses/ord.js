@@ -22,5 +22,6 @@ module.exports = {
   },
   gte: function(one, other){
     return one.__gte__(other)
-  }
+  },
+  __definition__: Ord
 }
