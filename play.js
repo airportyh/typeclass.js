@@ -44,9 +44,9 @@ show(Num.multiply(f1, f3))
 show(Num.subtract(f1, f2))
 show(Num.sign(Num.subtract(f1, f2)))
 show(new Fraction(1, 0))
-
+show('18/4 =', new Fraction(18, 4).simplify())
 show(Num.multiply(Num.add(1, 2), 3))
 
 function show(thing){
-  console.log(String(thing))
+  console.log.apply(null, Array.prototype.slice.call(arguments).map(String))
 }

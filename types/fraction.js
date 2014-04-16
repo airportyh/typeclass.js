@@ -17,11 +17,8 @@ Fraction.prototype = {
     return this.top + '/' + this.bottom
   },
   simplify: function(){
-    if (this.top % this.bottom === 0){
-      return new Fraction(this.top / this.bottom, 1)
-    }else{
-      return this
-    }
+    var gcf = greatestCommonFactor(this.top, this.bottom)
+    return new Fraction(this.top / gcf, this.bottom / gcf)
   },
   // Eq
   __eq__: function(other){
@@ -63,4 +60,15 @@ Fraction.prototype = {
   __sign__: function(){
     return this.top >= 0 ? '+' : '-'
   }
+}
+
+function greatestCommonFactor(n1, n2){
+  var i = Math.min(n1, n2)
+  while (i > 1){
+    if (n1 % i === 0 && n2 % i === 0){
+      return i
+    }
+    i--
+  }
+  return i
 }
