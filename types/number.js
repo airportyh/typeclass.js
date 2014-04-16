@@ -17,18 +17,27 @@ method('__compare__', function(other){
   }
 })
 
-method('__lt__', function(other){
-  return this.valueOf() < other
+// Numeric
+method('__add__', function(other){
+  return this.valueOf() + other
 })
 
-method('__gt__', function(other){
-  return this.valueOf() > other
+method('__subtract__', function(other){
+  return this.valueOf() - other
 })
 
-method('__lte__', function(other){
-  return this.valueOf() <= other
+method('__multiply__', function(other){
+  return this.valueOf() * other
 })
 
-method('__gte__', function(other){
-  return this.valueOf() >= other
+method('__abs__', function(){
+  return Math.abs(this.valueOf())
+})
+
+method('__negate__', function(){
+  return -this.valueOf()
+})
+
+method('__sign__', function(){
+  return this.valueOf() >= 0 ? '+' : '-'
 })

@@ -25,19 +25,3 @@ method('__compare__', function(other){
     return -1
   }
 })
-
-method('__lt__', function(other){
-  return this.valueOf() < other
-})
-
-method('__gt__', function(other){
-  return this.valueOf() > other
-})
-
-method('__lte__', function(other){
-  return this.valueOf() <= other
-})
-
-method('__gte__', function(other){
-  return this.valueOf() >= other
-})

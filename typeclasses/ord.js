@@ -1,27 +1,25 @@
 
 var Ord = {
-  __compare__: function(other){},
-  __lt__: function(other){},
-  __lte__: function(other){},
-  __gt__: function(other){},
-  __gte__: function(other){}
+  __compare__: function(other){}
 }
 
 module.exports = {
-  compare: function(one, other){
-    return one.__compare__(other)
-  },
+  compare: compare,
   lt: function(one, other){
-    return one.__lt__(other)
+    return compare(one, other) < 0
   },
   lte: function(one, other){
-    return one.__lte__(other)
+    return compare(one, other) <= 0
   },
   gt: function(one, other){
-    return one.__gt__(other)
+    return compare(one, other) > 0
   },
   gte: function(one, other){
-    return one.__gte__(other)
+    return compare(one, other) >= 0
   },
   __definition__: Ord
+}
+
+function compare(one, other){
+  return one.__compare__(other)
 }
